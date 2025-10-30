@@ -1,9 +1,15 @@
 let savedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+const themeButton = document.querySelector("#theme");
 const taskList = document.querySelector("#task-list");
 const createBar = document.querySelector("#create-task");
 const clearButton = document.querySelector("#clear");
 
 savedTasks.forEach(task => loadTasks(task));
+
+themeButton.addEventListener("click", () => {
+    document.documentElement.querySelector("body").classList.toggle("dark");
+});
 
 createBar.addEventListener("keydown", (event) => {
     if(event.key === "Enter"){
@@ -26,7 +32,9 @@ function loadTasks(text = createBar.value){
     newTask.appendChild(newSpan);
 
     const deleteIcon = document.createElement("button");
-    deleteIcon.textContent = "❌";
+    deleteIcon.textContent = "✖️";
+    deleteIcon.onmouseenter = () => deleteIcon.textContent = "❌";
+    deleteIcon.onmouseleave = () => deleteIcon.textContent = "✖️";
     deleteIcon.onclick = () => removeTask(newTask);
     newTask.appendChild(deleteIcon);
 }
