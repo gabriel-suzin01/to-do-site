@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --page-bg: hsl(200 100 90);
+
+    --create-bar-bg-color: hsl(0 0 95);
+    --create-bar-bg-hover: hsl(0 0 100);
+    --create-bar-border-color: hsl(0 0 80);
+
+    --task-list-bg-color: hsl(0 0 95);
+    --task-list-border-color: hsl(0 0 80);
+    --drop-shadow: hsl(0 0 50);
+
+    color: hsl(0 0 10);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--page-bg);
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: start;
+}
+
+#create-bar{
+    display: flex;
+    align-items: center;
+    
+    width: 80dvw;
+    height: 50px;
+
+    margin: 30px 0;
+
+    background-color: var(--create-bar-bg-color);
+    border: 2px solid var(--create-bar-border-color);
+    border-radius: 10px;
+
+    box-shadow: 8px 8px 4px var(--drop-shadow);
+}
+
+#create-task{
+    background: none;
+    flex: 1;
+    border: none;
+    height: 100%;
+
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 1rem;
+}
+
+#create-task:hover{
+    background-color: var(--create-bar-bg-hover);
+}
+
+#create-task:focus{
+    background-color: var(--create-bar-bg-hover);
+    outline: 2px solid var(--task-list-drop-shadow);
+}
+
+#create-bar > span{
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#task-list{
+    display: flex;
+
+    width: 80dvw;
+    height: 500px;
+
+    flex-direction: column;
+    gap: 5px;
+
+    overflow-y: scroll;
+
+    background-color: var(--task-list-bg-color);
+    border: 2px solid var(--task-list-border-color);
+    border-radius: 10px;
+    box-shadow: 8px 8px 4px var(--drop-shadow);
+}
+
+#task-list::-webkit-scrollbar{
+    border-radius: 10px;
+    background-color: hsl(0 0 90);
+    width: 15px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    width: 100%;
+    height: auto;
+
+    font-size: 0.5rem;
+    color: black;
+}
+
+.task > button{
+    display: flex;
+    width: 100px;
+    height: 100%;
+}
