@@ -1,4 +1,4 @@
-# To-do site 📝
+# Todo site 📝
 
 This project was created just for fun and practice!
 
