@@ -182,6 +182,10 @@ body{
     max-width: 90%;
 }
 
+.task > span:hover{
+    cursor: pointer;
+}
+
 .task > button{
     display: block;
     cursor: pointer;

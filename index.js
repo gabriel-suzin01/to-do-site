@@ -7,6 +7,14 @@ const clearButton = document.querySelector("#clear");
 
 savedTasks.forEach(task => loadTasks(task));
 
+taskList.addEventListener("click", event => {
+    let textDecoration = event.target.style.textDecoration === "line-through" ? "none" : "line-through";
+    
+    if(event.target.tagName === "SPAN"){
+        event.target.style.textDecoration = textDecoration;
+    }
+});
+
 themeButton.addEventListener("click", () => {
     document.documentElement.querySelector("body").classList.toggle("dark");
 });
